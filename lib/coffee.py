@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 class Coffee:
+    """Represents a coffee sold by the store, with a size, price, and tipping behavior."""
 
     VALID_SIZES = ("Small", "Medium", "Large")
 
@@ -14,6 +15,8 @@ class Coffee:
 
     @size.setter
     def size(self, size):
+        # Restrict size to the store's three menu options; anything else
+        # is rejected so the price/size pairing always stays meaningful.
         if size in self.VALID_SIZES:
             self._size = size
         else:
